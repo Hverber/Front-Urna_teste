@@ -1,0 +1,406 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2933;
+  background: #eef2f4;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: #eef2f4;
+}
+
+.top-bar {
+  background: #d8dee4;
+  border-bottom: 1px solid #c2cad3;
+  padding: 26px 46px 20px;
+}
+
+.top-bar h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.6rem;
+  color: #17212b;
+}
+
+.screen-content {
+  min-height: calc(100vh - 102px);
+  background: #eef2f4;
+}
+
+.welcome-screen,
+.saving-screen,
+.vote-screen,
+.end-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.welcome-center,
+.saving-content,
+.end-screen {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-center h2,
+.saving-content h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 3.2rem;
+}
+
+.end-screen h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 8rem;
+}
+
+.bottom-panel {
+  border-top: 3px solid #17212b;
+  padding: 22px 18px 12px;
+}
+
+.bottom-panel p {
+  margin-bottom: 24px;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+
+.single-button-area {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-area {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.action-button {
+  min-height: 70px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  box-shadow: 0 3px 0 rgba(17, 24, 39, 0.18);
+}
+
+.action-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(17, 24, 39, 0.18);
+}
+
+.blank-button {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+}
+
+.correct-button {
+  background: #d97706;
+  color: #fff;
+}
+
+.confirm-button {
+  background: #15803d;
+  color: #fff;
+}
+
+.vote-layout {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 34px;
+  padding: 48px 28px 24px;
+}
+
+.vote-left {
+  flex: 1;
+}
+
+.vote-title {
+  margin-bottom: 72px;
+  font-size: 3rem;
+}
+
+.cargo-block h2 {
+  margin-bottom: 12px;
+  font-size: 2.8rem;
+  font-weight: 400;
+}
+
+.digit-boxes {
+  display: flex;
+  margin-bottom: 28px;
+}
+
+.digit-box {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  border: 3px solid #17212b;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.status-message {
+  margin-bottom: 24px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.info-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.info-fields p {
+  font-size: 2.2rem;
+}
+
+.vote-right {
+  width: 44%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.photo-area {
+  width: 100%;
+}
+
+.default-layout {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stacked-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.senator-layout {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: end;
+  gap: 28px 36px;
+}
+
+.last-senator-photo {
+  grid-column: 2;
+}
+
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-placeholder {
+  width: 240px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  color: #64748b;
+  font-size: 2.4rem;
+}
+
+.photo-card span {
+  margin-top: 8px;
+  font-size: 1.7rem;
+}
+
+.saving-content {
+  flex-direction: column;
+  gap: 44px;
+}
+
+.progress-track {
+  width: min(86vw, 1050px);
+  height: 22px;
+  overflow: hidden;
+  background: #d8dee4;
+  border-radius: 999px;
+}
+
+.progress-fill {
+  width: 0;
+  height: 100%;
+  background: #15803d;
+  animation: progress 1.8s linear forwards;
+}
+
+@keyframes progress {
+  to {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .vote-layout {
+    flex-direction: column;
+  }
+
+  .vote-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .default-layout,
+  .senator-layout {
+    justify-content: start;
+  }
+
+  .stacked-layout {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .top-bar {
+    padding: 20px;
+  }
+
+  .top-bar h1 {
+    font-size: 2rem;
+  }
+
+  .vote-layout {
+    padding: 30px 18px 20px;
+  }
+
+  .button-area {
+    grid-template-columns: 1fr;
+  }
+
+  .single-button-area {
+    justify-content: stretch;
+  }
+
+  .action-button {
+    width: 100%;
+    font-size: 1.45rem;
+  }
+
+  .vote-title,
+  .cargo-block h2 {
+    font-size: 2.1rem;
+  }
+
+  .info-fields p {
+    font-size: 1.7rem;
+  }
+
+  .photo-placeholder {
+    width: 180px;
+    height: 160px;
+  }
+}
+
+/* ===== Integração com a API ===== */
+
+.api-banner {
+  background: #c0392b;
+  color: #fff;
+  padding: 10px 46px;
+  font-size: 0.95rem;
+}
+
+.identify-center {
+  flex-direction: column;
+  gap: 18px;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.identify-center h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.6rem;
+}
+
+.identify-hint {
+  max-width: 520px;
+  color: #52606d;
+}
+
+.identify-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.identify-input {
+  font-size: 1.3rem;
+  padding: 12px 16px;
+  border: 2px solid #17212b;
+  border-radius: 6px;
+  width: 320px;
+  letter-spacing: 2px;
+}
+
+.identify-error {
+  color: #c0392b;
+  font-weight: bold;
+  max-width: 520px;
+}
+
+.saving-error {
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.saving-error-message {
+  color: #c0392b;
+  font-weight: bold;
+  max-width: 560px;
+}
+
+.end-screen-column {
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.end-message {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.end-hint {
+  color: #52606d;
+}
