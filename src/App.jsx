@@ -42,7 +42,7 @@ export default function App() {
     useEffect(() => {
         if (!sessao?.eleicao?.id || !eleitor) return
 
-        // 💡 Lógica corrigida: Encontra a Urna comparando o ID da Seção!
+        // Encontra a Urna comparando o ID da Seção!
         const urnaCorreta = sessao.todasUrnas?.find((u) => {
             // Verifica se a urna tem uma seção e se o ID dela é igual ao ID da seção do eleitor
             return u.secao?.id && eleitor.secao?.id && String(u.secao.id) === String(eleitor.secao.id);
@@ -106,7 +106,7 @@ export default function App() {
 
     function handleIdentified(eleitorEncontrado) {
         setEleitor(eleitorEncontrado)
-        // O avanço de tela foi removido daqui e transferido para o useEffect de sincronização.
+
     }
 
     function confirmVote() {

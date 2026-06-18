@@ -117,7 +117,6 @@ export async function carregarSessaoUrna() {
         aberta = false
     }
 
-    // Removemos a busca prematura de candidatos. Ela ocorrerá no App.jsx.
     return { eleicao, urna: null, todasUrnas: urnas, candidatos: [], aberta }
 }
 
