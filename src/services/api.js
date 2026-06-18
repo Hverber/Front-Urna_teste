@@ -182,7 +182,7 @@ async function registrarControleManual(eleitorId) {
 }
 
 // O backend trava antes de incrementar a apuração; recria o registro
-// com o total atualizado (a API não tem endpoint de update).
+// com o total atualizado (a API não tem endpoint de update)
 async function corrigirApuracao(escolhas, eleicao) {
     for (const escolha of escolhas) {
         if (!escolha.candidato) continue // branco/nulo não entra na apuração
