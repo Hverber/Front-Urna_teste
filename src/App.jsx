@@ -106,7 +106,7 @@ export default function App() {
 
     function handleIdentified(eleitorEncontrado) {
         setEleitor(eleitorEncontrado)
-        // O avanço de tela foi removido daqui e transferido para o useEffect de sincronização
+        // O avanço de tela foi removido daqui e transferido para o useEffect de sincronização.
     }
 
     function confirmVote() {
