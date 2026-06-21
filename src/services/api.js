@@ -164,10 +164,7 @@ export function buscarCandidato(candidatos, numeroDigitado, nomeCargo) {
     )
 }
 
-// Bug conhecido do backend: o VotoService cria o ControleVoto só com o
-// eleitorId, mas a entidade usa @MapsId e exige o objeto "eleitor".
-// O voto em si é salvo ANTES desse crash, então dá para tolerar o erro
-// e completar o resto (controle + apuração) por aqui.
+
 const BUG_CONTROLE = /could not assign id/i
 
 // Marca o eleitor como "já votou" enviando o objeto eleitor completo
