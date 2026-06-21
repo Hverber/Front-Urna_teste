@@ -1,7 +1,3 @@
-// Camada de integração com a API (Modulo-Urna).
-// Todas as chamadas passam pelo proxy do Vite ("/api" -> backend),
-// configurado em vite.config.js, o que evita problemas de CORS
-// sem precisar alterar nada no backend.
 
 const BASE = '/api'
 
