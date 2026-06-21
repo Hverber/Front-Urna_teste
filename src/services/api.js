@@ -3,7 +3,9 @@
 // configurado em vite.config.js, o que evita problemas de CORS
 // sem precisar alterar nada no backend.
 
-const BASE = '/api'
+const BASE = window.location.hostname === 'localhost'
+    ? '/api'
+    : 'https://modulo-urna-production.up.railway.app';
 
 async function request(path, options = {}) {
     const config = { ...options }
