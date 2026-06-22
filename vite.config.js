@@ -10,16 +10,20 @@ export default defineConfig(({ mode }) => {
   const apiUrl =
     env.VITE_API_URL || 'https://modulo-urna-production.up.railway.app'
 
-  return {
-    plugins: [react()],
-    server: {
-      open: false,
-      proxy: {
-        '/api': {
-          target: apiUrl,
-          changeOrigin: true,
+    return {
+        root: 'src',
+        plugins: [react()],
+        server: {
+            host: true,
+            port: process.env.PORT ? Number(process.env.PORT) : 5173,
+            open: false,
+            proxy: {
+                '/api': {
+                    target: apiUrl,
+                    changeOrigin: true,
+                    rewrite: (path) => path.replace(/^\/api/, '')
+                },
+            },
         },
-      },
-    },
-  }
+    }
 })
