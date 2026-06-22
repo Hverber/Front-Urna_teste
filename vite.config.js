@@ -11,7 +11,6 @@ export default defineConfig(({ mode }) => {
     env.VITE_API_URL || 'https://modulo-urna-production.up.railway.app'
 
     return {
-        root: 'src',
         plugins: [react()],
         server: {
             host: true,
