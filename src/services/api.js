@@ -1,4 +1,7 @@
-const BASE = '/api'
+const API_URL = import.meta.env.VITE_API_URL || ''
+
+// Monta a base corretamente para produção ou local
+const BASE = `${API_URL}/api`
 
 async function request(path, options = {}) {
     const config = { ...options }
