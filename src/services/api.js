@@ -1,7 +1,4 @@
-
-const BASE = window.location.hostname === 'localhost'
-    ? '/api'
-    : 'https://modulo-urna-production.up.railway.app';
+const BASE = '/api'
 
 async function request(path, options = {}) {
     const config = { ...options }
